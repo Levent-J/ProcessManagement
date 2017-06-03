@@ -10,6 +10,7 @@ public class CommandParser {
     public static final int COMMAND_TIME_OUT = 3;
     public static final int COMMAND_REQUEST_RESOURCE = 4;
     public static final int COMMAND_RELEASE_RESOURCE = 5;
+    public static final int COMMAND_LIST_ALL_PROCESS = 6;
 
     public int commandType;
     public String param1 = "";
@@ -63,17 +64,19 @@ public class CommandParser {
             }
         }
 
-        if (type.equals(Command.COMMAND_CREATE)) {
+        if (type.equals(Commons.COMMAND_CREATE)) {
             commandType = COMMAND_CREATE;
-        }else if (type.equals(Command.COMMAND_DESTROY)) {
+        }else if (type.equals(Commons.COMMAND_DESTROY)) {
             commandType = COMMAND_DESTROY;
-        }else if (type.equals(Command.COMMAND_TIME_OUT)) {
+        }else if (type.equals(Commons.COMMAND_TIME_OUT)) {
             commandType = COMMAND_TIME_OUT;
-        }else if (type.equals(Command.COMMAND_REQUEST_RESOURCE)) {
+        }else if (type.equals(Commons.COMMAND_REQUEST_RESOURCE)) {
             commandType = COMMAND_REQUEST_RESOURCE;
-        }else if (type.equals(Command.COMMAND_RELEASE_RESOURCE)) {
+        }else if (type.equals(Commons.COMMAND_RELEASE_RESOURCE)) {
             commandType = COMMAND_RELEASE_RESOURCE;
-        }else {
+        }else if (type.equals(Commons.COMMAND_LIST_ALL_PROCESS)){
+            commandType = COMMAND_LIST_ALL_PROCESS;
+        } else {
             commandType = COMMAND_NULL;
         }
 
